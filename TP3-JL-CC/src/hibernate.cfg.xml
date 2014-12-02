@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">qwerty123</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bibli</property>
+  <property name="hibernate.connection.username">garneau</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+  <property name="hibernate.search.autoregister_listeners">false</property>
+  <property name="hibernate.validator.apply_to_ddl">false</property>
+  <property name="hibernate.current_session_context_class">thread</property>
+  <mapping resource="com/deptinfo/hirbernate/BiTypesmembres.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiCopiesarticles.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiReservation.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiEmprunts.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiModespaiements.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiCommentaires.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiProvinces.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiProduits.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiAuteurs.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiArticles.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiTypearticles.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiVentesproduits.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiMembres.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiVentes.hbm.xml"/>
+  <mapping resource="com/deptinfo/hirbernate/BiMaisonseditions.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 2, 2014 12:51:28 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deptinfo.hirbernate.BiVentes" table="bi_ventes" catalog="bibli">
+        <id name="venteId" type="int">
+            <column name="VenteID" precision="7" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="biModespaiements" class="com.deptinfo.hirbernate.BiModespaiements" fetch="select">
+            <column name="ModePaiementCd" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="biMembres" class="com.deptinfo.hirbernate.BiMembres" fetch="select">
+            <column name="NoMembre" precision="7" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dateVente" type="timestamp">
+            <column name="dateVente" length="0" not-null="true" />
+        </property>
+        <property name="totalVente" type="big_decimal">
+            <column name="TotalVente" precision="5" not-null="true" />
+        </property>
+        <property name="taxeProvCourante" type="big_decimal">
+            <column name="TaxeProvCourante" precision="8" />
+        </property>
+        <property name="taxeFedCourante" type="big_decimal">
+            <column name="TaxeFedCourante" precision="8" />
+        </property>
+        <property name="totalTaxes" type="big_decimal">
+            <column name="TotalTaxes" precision="8" />
+        </property>
+        <property name="grandTotalVente" type="big_decimal">
+            <column name="GrandTotalVente" precision="8" />
+        </property>
+        <set name="biVentesproduitses" table="bi_ventesproduits" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VenteID" precision="7" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.deptinfo.hirbernate.BiVentesproduits" />
+        </set>
+    </class>
+</hibernate-mapping>
